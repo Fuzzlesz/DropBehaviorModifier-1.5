@@ -135,7 +135,7 @@ namespace Hooks
 			RE::InventoryEntryData* a_entryData);
 
 		inline static REL::Relocation<decltype(&Thunk)> _func;
-		inline static constexpr size_t offset{ 0x4F };
+		inline static constexpr size_t offset{ 0x55 };
 		std::string setting{ "Inventory|bEnable" };
 	};
 

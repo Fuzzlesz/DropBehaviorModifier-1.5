@@ -4,34 +4,6 @@
 
 namespace RE
 {
-	// Nabbed from PO3, but also pointed to it by Parapets.
-	namespace BSModelDB
-	{
-		struct DBTraits
-		{
-		public:
-			inline static constexpr auto          RTTI = RTTI_BSModelDB__DBTraits;
-			inline static constexpr std::uint32_t LOAD_QUEUE_SIZE = 8;
-			inline static constexpr std::uint32_t RELEASE_QUEUE_SIZE = 2;
-
-			using U_Type = NiPointer<NiNode>;
-
-			struct ArgsType
-			{
-			public:
-				// members
-				std::uint32_t LODmult{ 0 };         // 0
-				std::uint32_t texLoadLevel{ 3 };    // 4
-				bool          unk8{ true };         // 8
-				bool          unk9{ false };        // 9
-				bool          unkA{ true };         // A
-				bool          postProcess{ true };  // B
-			};
-			static_assert(sizeof(ArgsType) == 0xC);
-		};
-		static_assert(std::is_empty_v<DBTraits>);
-	}
-
 	// Lifted from PO3's ComonLib.
 	int Demand(const char* a_modelPath, NiPointer<NiNode>& a_modelOut, const BSModelDB::DBTraits::ArgsType& a_args)
 	{

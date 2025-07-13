@@ -7,7 +7,7 @@ namespace Events
 	void Enable_ObjectREFR(RE::TESObjectREFR* a_this, bool a_resetInventory)
 	{
 		using func_t = decltype(&Enable_ObjectREFR);
-		static REL::Relocation<func_t> func{ REL::ID(19800) };
+		static REL::Relocation<func_t> func{ REL::ID(19373) }; //140298190
 		return func(a_this, a_resetInventory);
 	}
 

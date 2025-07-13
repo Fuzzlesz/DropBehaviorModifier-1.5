@@ -69,7 +69,7 @@ namespace Hooks
 	bool Inventory3DManagerHook::Install() {
 		logger::info("Inventory 3D Manager:"sv);
 
-		REL::Relocation<std::uintptr_t> target{ REL::ID(51851), offset};
+		REL::Relocation<std::uintptr_t> target{ REL::ID(50972), offset}; //14088DFD0
 		if (!(REL::make_pattern<"E9">().match(target.address()))) {
 			SKSE::stl::report_and_fail("Failed to validate pattern of the Inventory 3D Manager."sv);
 		}
@@ -90,7 +90,7 @@ namespace Hooks
 			return;
 		}
 
-		a_this->Clear3D();
+		a_this->UnloadInventoryItem();
 		a_this->loadedModels.clear();
 		_func(a_this, a_entryData);
 	}
